@@ -11,12 +11,12 @@ Employee REST Controller <=> Employee Service <=> Employee DAO <=> Database
 
   The REST Controllers handle the HTTP requests and responses from the REST clients and the return packages from the
 Employee Service respectively.
-<br/><br/>
+<br/>
 - Employee Service
 
   The Employee Services manage service layer and the transactional aspect of the CRUD actions with the database. That is to say, the services
 would also call the corresponding methods from the DAO.
-<br/><br/>
+<br/>
 - Employee DAO
 
   The Employee DAO (Data Access Object) would only retrieve the values from the databases and return them to the service
