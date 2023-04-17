@@ -7,17 +7,19 @@ build a demo API that supports creating, reading, updating and deleting the empl
 ### API Structure
 Employee REST Controller <=> Employee Service <=> Employee DAO <=> Database
 
-- Employee REST Controller
+![API Structure Flow Chart](./src/main/resources/static/images/API_Structure_FlowChart.png)
+
+- Employee REST Controller:
 
   The REST Controllers handle the HTTP requests and responses from the REST clients and the return packages from the
 Employee Service respectively.
-<br/><br/>
-- Employee Service
+
+- Employee Service:
 
   The Employee Services manage service layer and the transactional aspect of the CRUD actions with the database. That is to say, the services
 would also call the corresponding methods from the DAO.
-<br/><br/>
-- Employee DAO
+
+- Employee DAO:
 
   The Employee DAO (Data Access Object) would only retrieve the values from the databases and return them to the service
 layer utilizing Hibernate JPA implementation.
