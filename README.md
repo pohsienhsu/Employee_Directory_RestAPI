@@ -5,9 +5,9 @@ The sample data is stored in MySQL server along with Hibernate JPA to access the
 build a demo API that supports creating, reading, updating and deleting the employees directory info.
 
 ### API Structure
-Employee REST Controller <=> Employee Service <=> Employee DAO <=> Database
+Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database
 
-![API Structure Flow Chart](./src/main/resources/static/images/API_Structure_FlowChart.png)
+![API Structure Flow Chart](./src/main/resources/static/images/Revised_API_FlowChart.png)
 
 - Employee REST Controller:
 
@@ -19,10 +19,11 @@ Employee Service respectively.
   The Employee Services manage service layer and the transactional aspect of the CRUD actions with the database. That is to say, the services
 would also call the corresponding methods from the DAO.
 
-- Employee DAO:
+- Employee Repository:
 
-  The Employee DAO (Data Access Object) would only retrieve the values from the databases and return them to the service
-layer utilizing Hibernate JPA implementation.
+  The Employee Repository was refactored from writing our own DAO (Data Access Object). The JPA Repository comes with 
+standard CRUD functions, including findAll(), save, deleteById(), etc. The Employee Repository would retrieve the data 
+from the databases.
 
   
 
