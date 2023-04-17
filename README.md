@@ -7,6 +7,8 @@ build a demo API that supports creating, reading, updating and deleting the empl
 ### API Structure
 Employee REST Controller <=> Employee Service <=> Employee DAO <=> Database
 
+![API Structure Flow Chart](./src/main/resources/static/images/API_Structure_FlowChart.png)
+
 - Employee REST Controller:
 
   The REST Controllers handle the HTTP requests and responses from the REST clients and the return packages from the
