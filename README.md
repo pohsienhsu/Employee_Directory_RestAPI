@@ -29,15 +29,15 @@ from the databases.
 
 The project's endpoints are currently at the default localhost port 8080.
 
-http://localhost:8080/api
+http://localhost:8080/magic-api
 
-| HTTP Method | Endpoint                | Description                    |
-|:-----------:|:------------------------|:-------------------------------|
-|     GET     | /employees              | gets a list of all employees   |
-|     GET     | /employees/{employeeId} | get an employees based on ID   |
-|    POST     | /employees              | create/insert an new employee  |
-|     PUT     | /employees              | update an existing employee    |
-|   DELETE    | /employees/{employeeId} | delete an employee based on ID |
+| HTTP Method | Endpoint                | Description                         |
+|:-----------:|:------------------------|:------------------------------------|
+|     GET     | /employees              | gets a list of all employees        |
+|     GET     | /employees/{employeeId} | get an employees based on ID        |
+|    POST     | /employees              | create/insert an new employee       |
+|     PUT     | /employees/{employeeId} | update an existing employee with ID |
+|   DELETE    | /employees/{employeeId} | delete an employee based on ID      |
 
 
 
