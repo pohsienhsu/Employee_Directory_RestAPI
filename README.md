@@ -5,7 +5,7 @@ The sample data is stored in MySQL server along with Hibernate JPA to access the
 build a demo API that supports creating, reading, updating and deleting the employees directory info.
 
 ### API Structure
-Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database
+Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database (MySQL)
 
 ![API Structure Flow Chart](./src/main/resources/static/images/Revised_API_FlowChart.png)
 
@@ -24,6 +24,22 @@ would also call the corresponding methods from the DAO.
   The Employee Repository was refactored from writing our own DAO (Data Access Object). The JPA Repository comes with 
 standard CRUD functions, including findAll(), save, deleteById(), etc. The Employee Repository would retrieve the data 
 from the databases.
+
+### REST Endpoints
+
+The project's endpoints are currently at the default localhost port 8080.
+
+http://localhost:8080/api
+
+| HTTP Method | Endpoint                | Description                    |
+|:-----------:|:------------------------|:-------------------------------|
+|     GET     | /employees              | gets a list of all employees   |
+|     GET     | /employees/{employeeId} | get an employees based on ID   |
+|    POST     | /employees              | create/insert an new employee  |
+|     PUT     | /employees              | update an existing employee    |
+|   DELETE    | /employees/{employeeId} | delete an employee based on ID |
+
+
 
   
 
