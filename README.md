@@ -25,5 +25,21 @@ would also call the corresponding methods from the DAO.
 standard CRUD functions, including findAll(), save, deleteById(), etc. The Employee Repository would retrieve the data 
 from the databases.
 
+### REST Endpoints
+
+The project's endpoints are currently at the default localhost port 8080.
+
+http://localhost:8080/api
+
+| HTTP Method | Endpoint                | Description                    |
+|:-----------:|:------------------------|:-------------------------------|
+|     GET     | /employees              | gets a list of all employees   |
+|     GET     | /employees/{employeeId} | get an employees based on ID   |
+|    POST     | /employees              | create/insert an new employee  |
+|     PUT     | /employees              | update an existing employee    |
+|   DELETE    | /employees/{employeeId} | delete an employee based on ID |
+
+
+
   
 
