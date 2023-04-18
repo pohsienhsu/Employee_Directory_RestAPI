@@ -5,7 +5,7 @@ The sample data is stored in MySQL server along with Hibernate JPA to access the
 build a demo API that supports creating, reading, updating and deleting the employees directory info.
 
 ### API Structure
-Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database
+Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database (MySQL)
 
 ![API Structure Flow Chart](./src/main/resources/static/images/Revised_API_FlowChart.png)
 
