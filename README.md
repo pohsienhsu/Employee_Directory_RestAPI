@@ -19,9 +19,6 @@ Employee Service respectively.
   The Employee Services manage service layer and the transactional aspect of the CRUD actions with the database. That is to say, the services
 would also call the corresponding methods from the DAO.
 
-> The API had been refactored to use the Spring Data Rest dependency to have the Rest Controllers and Services out of box
-> without the boilerplates. The dependencies are shown in the pom file.
-
 - Employee Repository:
 
   The Employee Repository was refactored from writing our own DAO (Data Access Object). The JPA Repository comes with 
