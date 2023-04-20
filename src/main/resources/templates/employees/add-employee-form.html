@@ -18,7 +18,7 @@
         <hr>
 
         <p class="h4 mb-4">Save Employee</p>
-        <form action="#" th:action="@{/employees/showFormForAdd}"
+        <form action="#" th:action="@{/employees/save}"
                          th:object="${employee}" method="POST">
 
             <input type="text" th:field="*{firstName}"
