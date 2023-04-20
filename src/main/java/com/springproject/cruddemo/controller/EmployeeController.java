@@ -6,8 +6,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +25,33 @@ public class EmployeeController {
     // add mapping for "/list"
 
     @GetMapping("/list")
-    public String listEmployees(Model theModel) {
+    public String listEmployees(Model model) {
         // get the employees from db
         List<Employee> employees = this.employeeService.findAll();
         // add to the spring model
-        theModel.addAttribute("employees", employees);
+        model.addAttribute("employees", employees);
 
-        return "list-employees";
+        return "employees/list-employees";
+    }
+
+    @GetMapping("/showFormForAdd")
+    public String addEmployee(Model model) {
+        // create model attribute to bind form data
+        Employee newEmployee = new Employee();
+
+        model.addAttribute("employee", newEmployee);
+
+        return "employees/add-employee-form";
+
+    }
+
+    @PostMapping("/save")
+    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+        // save the employee
+        this.employeeService.save(employee);
+
+        // use a redirect to prevent duplicate submissions
+        return "redirect:/employees/list";
     }
 }
 
