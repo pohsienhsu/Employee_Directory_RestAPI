@@ -7,7 +7,7 @@ build a demo API that supports creating, reading, updating and deleting the empl
 ### API Structure
 Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database (MySQL)
 
-![API Structure Flow Chart](./src/main/resources/static/images/Revised_API_FlowChart.png)
+<img src="src/main/resources/static/images/Revised_API_FlowChart.png"  width="900" height="100">
 
 - Employee REST Controller:
 
@@ -32,7 +32,7 @@ from the databases.
 
 The project's endpoints are currently at the default localhost port 8080.
 
-http://localhost:8080/magic-api
+http://localhost:8080/api
 
 | HTTP Method | Endpoint                | Description                         |
 |:-----------:|:------------------------|:------------------------------------|
@@ -48,8 +48,7 @@ The Employee API utilizes Spring Security and bcrypt for password hashing. The u
 and the bcrypt password is generated through this [website](https://www.bcryptcalculator.com/encode). In addition, each
 user would also have specific security roles that would have access to different API methods. As listed in the table below:
 
-![Spring Security Flow Chart](src/main/resources/static/images/Spring_Security_FlowChart.png
-)
+<img src="src/main/resources/static/images/Spring_Security_FlowChart.png"  width="900" height="100">
 
 > The Spring Security would compare the plain-text password the user input through the login form and hash it using bcrypt.
 > Since bcrypt is a one-way encoded algorithm, Spring Security can't decode the hashed password in the database. Therefore,
