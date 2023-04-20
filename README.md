@@ -42,6 +42,28 @@ http://localhost:8080/magic-api
 |     PUT     | /employees/{employeeId} | update an existing employee with ID |
 |   DELETE    | /employees/{employeeId} | delete an employee based on ID      |
 
+### Security
+
+The Employee API utilizes Spring Security and bcrypt for password hashing. The users' info is stored in the SQL database,
+and the bcrypt password is generated through this [website](https://www.bcryptcalculator.com/encode). In addition, each
+user would also have specific security roles that would have access to different API methods. As listed in the table below:
+
+![Spring Security Flow Chart](src/main/resources/static/images/Spring_Security_FlowChart.png
+)
+
+> The Spring Security would compare the plain-text password the user input through the login form and hash it using bcrypt.
+> Since bcrypt is a one-way encoded algorithm, Spring Security can't decode the hashed password in the database. Therefore,
+> it compares the hashed input to the hashed password in the database.
+
+| Roles    | Authorization                       |
+|:---------|:------------------------------------|
+| employee | access to GET employee info         |
+| manager  | access to create/update an employee |
+| admin    | access to DELETE an employee        |
+
+
+
+
 
 
   
