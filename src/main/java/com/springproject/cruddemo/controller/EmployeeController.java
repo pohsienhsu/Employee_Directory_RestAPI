@@ -27,7 +27,7 @@ public class EmployeeController {
 
     @GetMapping("/list")
     public String listEmployees(Model theModel) {
-
+        // get the employees from db
         List<Employee> employees = this.employeeService.findAll();
         // add to the spring model
         theModel.addAttribute("employees", employees);
