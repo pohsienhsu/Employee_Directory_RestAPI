@@ -7,7 +7,7 @@ build a demo API that supports creating, reading, updating and deleting the empl
 ### API Structure
 Employee REST Controller <=> Employee Service <=> Employee Repository <=> Database (MySQL)
 
-<img src="src/main/resources/static/images/Revised_API_FlowChart.png"  width="900" height="100">
+<img src="src/main/resources/static/images/Revised_API_FlowChart.png"  width="600" height="67">
 
 - Employee REST Controller:
 
@@ -48,7 +48,7 @@ The Employee API utilizes Spring Security and bcrypt for password hashing. The u
 and the bcrypt password is generated through this [website](https://www.bcryptcalculator.com/encode). In addition, each
 user would also have specific security roles that would have access to different API methods. As listed in the table below:
 
-<img src="src/main/resources/static/images/Spring_Security_FlowChart.png"  width="900" height="100">
+<img src="src/main/resources/static/images/Spring_Security_FlowChart.png"  width="600" height="67">
 
 > The Spring Security would compare the plain-text password the user input through the login form and hash it using bcrypt.
 > Since bcrypt is a one-way encoded algorithm, Spring Security can't decode the hashed password in the database. Therefore,
