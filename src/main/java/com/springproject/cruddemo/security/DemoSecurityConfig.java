@@ -1,13 +1,14 @@
+
 package com.springproject.cruddemo.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
-import org.springframework.security.web.SecurityFilterChain;
+//import org.springframework.http.HttpMethod;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+//import org.springframework.security.provisioning.JdbcUserDetailsManager;
+//import org.springframework.security.provisioning.UserDetailsManager;
+//import org.springframework.security.web.SecurityFilterChain;
 
 import javax.sql.DataSource;
 
@@ -15,6 +16,7 @@ import javax.sql.DataSource;
 public class DemoSecurityConfig {
 
     // add support for JDBC ... no more hardcoded users :-)
+    /*
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
 
@@ -53,29 +55,7 @@ public class DemoSecurityConfig {
 
         return http.build();
     }
-
-    /*
-    @Bean
-    public InMemoryUserDetailsManager userDetailManager() {
-        UserDetails john = User.builder()
-                .username("john")
-                .password("{noop}test123")
-                .roles("EMPLOYEE")
-                .build();
-
-        UserDetails mary = User.builder()
-                .username("mary")
-                .password("{noop}test123")
-                .roles("EMPLOYEE", "MANAGER")
-                .build();
-
-        UserDetails susan = User.builder()
-                .username("susan")
-                .password("{noop}test123")
-                .roles("EMPLOYEE", "MANAGER", "ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(john, mary, susan);
-    }
     */
+
 }
+
