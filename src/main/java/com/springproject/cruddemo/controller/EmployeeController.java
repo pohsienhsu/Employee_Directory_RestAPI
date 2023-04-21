@@ -35,7 +35,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/showFormForAdd")
-    public String addEmployee(Model model) {
+    public String showFormForAdd(Model model) {
         // create model attribute to bind form data
         Employee newEmployee = new Employee();
 
@@ -43,6 +43,24 @@ public class EmployeeController {
 
         return "employees/add-employee-form";
 
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("employeeId") int employeeId, Model model) {
+        // get the employee from the service
+        Employee employee = this.employeeService.findById(employeeId);
+        // set employee in the model to prepopulate the form
+        model.addAttribute("employee", employee);
+        // send over to our form
+        return "employees/add-employee-form";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") int employeeId) {
+        // delete the employee
+        this.employeeService.deleteById(employeeId);
+        // redirect to the /employees/list
+        return "redirect:/employees/list";
     }
 
     @PostMapping("/save")
