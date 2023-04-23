@@ -1,16 +1,19 @@
 package com.springproject.cruddemo.service;
 
-
+import com.springproject.cruddemo.dao.EmployeeRepository;
 import com.springproject.cruddemo.entity.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface EmployeeService {
-    public List<Employee> findAll();
+@Service
+public class EmployeeService {
 
-    public Employee findById(int employeeId);
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
-    public void save(Employee employee);
-
-    public void deleteById(int employeeId);
+    public List<Employee> findAllEmployee() {
+        return this.employeeRepository.findAll();
+    }
 }
