@@ -1,63 +1,27 @@
 package com.springproject.cruddemo.entity;
 
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="employee")
+@Document(collection="employees")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 
     // define fields
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id")
-    private int id;
-    @Column(name="first_name")
+    private ObjectId id;
     private String firstName;
-    @Column(name="last_name")
     private String lastName;
-    @Column(name="email")
     private String email;
 
-    // define constructors
-    public Employee() {
-    }
-    public Employee(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-
-    // define getter/setter
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Employee(ObjectId id) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     // define toString
